@@ -35,8 +35,8 @@ const Home = () => {
             Next.js Social Media App
           </motion.h1>
 
-          <p className="mt-6 text-xl font-semibold leading-8 text-gray-600">
-            My First project with Next.js
+          <p className="mt-6 pb-3 text-xl font-semibold leading-8 text-gray-600">
+            Enjoy explore articles and share your thoughts with others.
           </p>
 
           <motion.div
@@ -57,7 +57,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               initial={{ rotate: 125, y: -550, x: 120, opacity: 0.5 }}
               animate={{ rotate: -45, y: 0, x: "-50%", opacity: 0.9 }}
-              className="absolute -top-2 -left-2 "
+              className="absolute -left-2 -top-2"
             >
               <LuFileSpreadsheet className="text-5xl text-blue-600" />
             </motion.span>
