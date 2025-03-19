@@ -20,6 +20,3 @@ A modern social media application built with Next.js that allows users to explor
 - [Framer Motion](https://www.framer.com/motion/) - Production-ready animations
 - [TypeScript](https://www.typescriptlang.org/) - Enhanced type safety
 
-## 🚀 Getting Started
-
-1. Clone the repository:

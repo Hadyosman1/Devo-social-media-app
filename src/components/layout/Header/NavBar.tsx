@@ -60,17 +60,17 @@ const NavBar = ({ user }: TProps) => {
 
   return (
     <>
-      <span
+      <button
         onClick={() => setIsNavOpen((prev) => !prev)}
-        className="cursor-pointer text-2xl text-slate-700 md:hidden"
+        className="text-2xl text-slate-700 cursor-pointer md:hidden"
       >
         {!isNavOpen ? <RxHamburgerMenu /> : <IoCloseSharp />}
-      </span>
+      </button>
 
       <nav
-        className={`absolute bottom-0 left-0 right-0 z-40 flex flex-grow translate-y-full items-center justify-center bg-white p-4 text-white shadow shadow-blue-300 transition-[opacity,visibility] duration-300 ease-linear sm:p-7 md:visible md:static md:translate-y-0 md:bg-transparent md:p-0 md:opacity-100 md:shadow-none ${isNavOpen ? "opacity-100" : "invisible opacity-0"} `}
+        className={`absolute bottom-0 left-0 right-0 z-40 flex translate-y-full items-center justify-center bg-white p-4 text-white shadow shadow-blue-300 transition-[opacity,visibility] duration-300 ease-linear sm:p-7 md:visible md:static md:translate-y-0 md:bg-transparent md:p-0 md:opacity-100 md:shadow-none ${isNavOpen ? "opacity-100" : "invisible opacity-0"} `}
       >
-        <ul className="flex w-full flex-col items-start justify-center gap-3 md:flex-row md:items-center">
+        <ul className="flex flex-col justify-center w-full gap-y-3 gap-x-1.5 items-start md:flex-row md:items-center">
           {navLinks.map((link) => (
             <li key={link.label}>
               <Link
@@ -84,7 +84,7 @@ const NavBar = ({ user }: TProps) => {
                 {isActive(link.href, pathname) === "active" && (
                   <motion.span
                     layoutId="navLink"
-                    className="absolute bottom-0 left-0 right-0 h-[4px] bg-blue-400"
+                    className="bg-blue-400 h-[4px] absolute bottom-0 left-0 right-0"
                   />
                 )}
               </Link>

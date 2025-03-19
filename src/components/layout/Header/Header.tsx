@@ -7,17 +7,21 @@ import { TypeJWTPayload } from "@/types";
 
 const Header = ({ user }: { user: TypeJWTPayload | null }) => {
   return (
-    <header className="bg_glassy sticky top-0 z-[999] bg-white/50 shadow shadow-sky-200">
-      <div className="main-props container flex items-center justify-start gap-3 py-2">
-        <Link href="/">
-          <h1 className="hidden h-[55px] w-1/5 shrink items-center justify-start text-2xl font-extrabold text-slate-700 md:flex">
-            DE<span className="text-blue-600">V</span>O
-          </h1>
-        </Link>
+    <header className="bg-white/50 shadow shadow-sky-200 bg_glassy sticky top-0 z-[999]">
+      <div className="container flex justify-between gap-3 items-center main-props py-2">
+        <div className="justify-start hidden items-center md:basis-1/5 md:flex">
+          <Link href="/">
+            <h1 className="flex h-[55px] text-2xl text-slate-700 font-extrabold items-center">
+              DE<span className="text-blue-600">V</span>O
+            </h1>
+          </Link>
+        </div>
 
         <NavBar user={user} />
-
-        {!user ? <AuthLinks /> : <RoundedUser user={user} />}
+        
+        <div className="flex justify-end items-center md:basis-1/5">
+          {!user ? <AuthLinks /> : <RoundedUser user={user} />}
+        </div>
       </div>
     </header>
   );

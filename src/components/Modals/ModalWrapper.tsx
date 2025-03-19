@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { motion } from "framer-motion";
-
+import { AnimatePresence, motion } from "framer-motion";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 interface ModalProps {
@@ -71,7 +70,7 @@ const ModalWrapper = ({
   );
 
   return createPortal(
-    Modal,
+    <AnimatePresence mode="wait">{Modal}</AnimatePresence>,
     document.getElementById("modal-container") || document.body,
   );
 };
